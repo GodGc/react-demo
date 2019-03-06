@@ -10,12 +10,10 @@
 > - selectList: 已选中数据列表
 
 #### 1个核心Method：handleClick
-> 判断点击目标
-> 选中/取消后 样式切换
-> 选中/取消后 数据状态切换
-> 选中/取消后 selectList的增删
-> 选中/取消后 selectList长度判断（若大于10，则取消最初选中的item的选中状态）
+> - 判断点击目标
+> - 选中/取消后 样式切换
+> - 选中/取消后 数据状态切换
+> - 选中/取消后 selectList的增删
+> - 选中/取消后 selectList长度判断（若大于10，则取消最初选中的item的选中状态）
 
-----
-
-> export-button点击后打印 selectList到控制台，如果需要导出txt或json格式文件，则需要第三方组件(nodejs)的支持
+#### export-button：导出功能使用js-export-excel实现

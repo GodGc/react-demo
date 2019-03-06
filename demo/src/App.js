@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ExportJsonExcel from 'js-export-excel';
 const arr = Array.from(new Array(35), (v,i) => { return {value: 'a'+i,isSelect:false}});
 
 class NumberList extends React.Component {
@@ -55,6 +56,19 @@ class NumberList extends React.Component {
     let {selectList} = this.state;
     window.alert("The result is already printed on the browser's console(F12)");
     console.dir(selectList);
+    let option={};
+    let tmpSheetData = [{one:'Item',two:'Status'}];
+    selectList.forEach((item)=>{
+      tmpSheetData.push({one:item.value,two:item.isSelect?'选中':'未选中'})
+    });
+    option.fileName = 'excel'
+    option.datas=[
+      {
+        sheetData:tmpSheetData
+      }
+    ];
+    var toExcel = new ExportJsonExcel(option);
+    toExcel.saveExcel();
   }
 
   render() {
