@@ -54,8 +54,6 @@ class NumberList extends React.Component {
 
   handleExportAllSelected (){
     let {selectList} = this.state;
-    window.alert("The result is already printed on the browser's console(F12)");
-    console.dir(selectList);
     let option={};
     let tmpSheetData = [{one:'Item',two:'Status'}];
     selectList.forEach((item)=>{
@@ -83,7 +81,6 @@ class NumberList extends React.Component {
         </ul>
         <button className="export-btn" onClick={this.handleExportAllSelected}>export all selected Items</button>
       </div>
-      
     );
   }
 }
